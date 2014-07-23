@@ -6,10 +6,14 @@ When you have a large project or a complex build you might want to make sure tha
 
 # How to use
 
+```
+npm install --save prevent-grunt-overwrite
+```
+
 In your `Gruntfile.js`
 
 ```js
-var prevent = require("./index.js");
+var prevent = require("prevent-grunt-overwrite");
 
 module.exports = function(grunt) {
 	grunt.initConfig({
@@ -29,7 +33,7 @@ You can let the task continue using `grunt --force`. This will log an error when
 Using `--force` affects all tasks. If you only want to prevent your tasks from failing you can use
 
 ```js
-var prevent = require("./index.js");
+var prevent = require("prevent-grunt-overwrite");
 
 module.exports = function(grunt) {
 	prevent(grunt).nofail();
